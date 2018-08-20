@@ -1,0 +1,16 @@
+did vQTL coeffs
+big moves on test_1 adjustments
+talked to Dr. Wang about theory
+
+picograms?
+	100, 10, 1 ... etc.
+	
+	Cp is Log 2
+
+	any test -> adjust to all prod -> calc dosage
+
+
+independent sigmas?
+also look at some biomercator
+
+just get adjustment values and errors for the adjustments

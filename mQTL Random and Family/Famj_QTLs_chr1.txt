@@ -1,4 +1,4 @@
-mapName=Famj1
+mapName=Famj
 QTL1	Trait1	ID:0	P1	Y1	chr1	linkage_group 1	8.09	3	101.3	88.9	106.6
 QTL2	Trait1	ID:0	P1	Y1	chr1	linkage_group 1	25.9	9	244.6	209.6	256.2
 QTL3	Trait1	ID:0	P1	Y1	chr1	linkage_group 1	68.66	23	384.8	382	484.3

@@ -156,3 +156,6 @@ Still waiting on new Simulated vQTL
 5/16/18
 vQTL running again, I made a type after the scanonevar
 I also added in print statements to see how long certain parts of the analysis took 
+This was very helpful
+Generated images for the variance portion of the Howell Ratio data
+

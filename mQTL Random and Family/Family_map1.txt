@@ -1,4 +1,4 @@
-mapName=Famj1
+mapName=Famj
 Organism Genus=Zea
 Organism Species=mays
 Parent=b73
