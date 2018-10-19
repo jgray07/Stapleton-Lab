@@ -108,7 +108,7 @@ colnames(routvdf) = c("SNP Name",
                       "B Standard Deviation Est",
                       "B Standard Deviation Lower Bound",
                       "B Standard Deviation Upper Bound")
-write.csv(routvdf, file = "RandomvQTL_LOD,Pvals,EffectSizes1.csv")
+write.csv(routvdf, file = "RandomvQTL_LOD,Pvals,EffectSizes1010.csv")
 #now with fam
 #read in data
 fam <-read.cross(file = url("https://raw.githubusercontent.com/tbillman/Stapleton-Lab/master/vQTL%20Random%20and%20Family/data/tidied/Family.csv"))
@@ -124,6 +124,7 @@ y = 1:length(foutv$result$loc.name)
 y = y[-826]
 #populating a dataframe with effect size estimates
 fsizedf = sapply(y, function(x){
+  print(x)
   tempm =  effect.sizes(cross = fam,
                         phenotype.name = "PlantHeight",
                         genotype.names = c("AA","BB"),
@@ -164,4 +165,4 @@ colnames(foutvdf) = c("SNP Name",
                       "B Standard Deviation Est",
                       "B Standard Deviation Lower Bound",
                       "B Standard Deviation Upper Bound")
-write.csv(foutvdf, file = "famvQTL_LOD,Pvals,EffectSizes1.csv")
+write.csv(foutvdf, file = "famvQTL_LOD,Pvals,EffectSizes1010.csv")
