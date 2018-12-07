@@ -65,6 +65,7 @@ cscan$result$loc.name[1:20]
 keep <- which(substr(cscan$result$loc.name,5,5) != "_" &  substr(cscan$result$loc.name,6,6) != "_")
 
 #effect sizes can not be computed for these 3 SNPs
+loadError <- F
 csizedf <- sapply(keep, function(x){
   tryCatch(expr = {
     print(x)
@@ -72,17 +73,18 @@ csizedf <- sapply(keep, function(x){
                           phenotype.name = "PlantHeight",
                           genotype.names = c("AA","BB"),
                           focal.groups = cscan$result$loc.name[x])
-  }, error = function(e) {print(e)},
-  finally = {
+  }, error = function(e){print("Didn't Converge")},
+  finally = function(tempm){
     tempv = c(tempm[1,2:7],tempm[2,2:7])
     grow <- which(keep == x)
     return(c(unlist(tempv)))
   })
 })
+
 saveRDS(csizedf, "C://Users/Thomas/Documents/GitHub/Stapleton-Lab/vQTL\ Random\ and\ Family/combined/csizedf.rds")
 saveRDS(cscan,"C://Users/Thomas/Documents/GitHub/Stapleton-Lab/vQTL\ Random\ and\ Family/combined/cscan.rds")
-load("C://Users/Thomas/Documents/GitHub/Stapleton-Lab/vQTL\ Random\ and\ Family/combined/cscan.rds")
-load("C://Users/Thomas/Documents/GitHub/Stapleton-Lab/vQTL\ Random\ and\ Family/combined/csizedf.rds")
+cscan <- read_rds("C://Users/Thomas/Documents/GitHub/Stapleton-Lab/vQTL\ Random\ and\ Family/combined/cscan.rds")
+csizedf <- read_rds("C://Users/Thomas/Documents/GitHub/Stapleton-Lab/vQTL\ Random\ and\ Family/combined/csizedf.rds")
 
 keep <- which(substr(cscan$result$loc.name,5,5) != "_" &  substr(cscan$result$loc.name,6,6) != "_")
 
